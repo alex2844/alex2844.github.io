@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru" _style="--theme:#3F51B5; --theme-rgb:63, 81, 181; --theme-light:#747ce7.de124b6; --theme-dark:#0029840.6761eef; --bcolor:#fff;">
+<head>
+	<script>
+		// X=($(shopt -s nullglob; echo ./*/ ../*/)); (test "$X" && (printf '%s\n' "${X[@]}" | jq -R . | jq -s -c .) || (echo '[]'));
+		var local_projects = ["./corsFetch/","./globalFetch/","./globalStorage/","../google-clone-drive/","../google-files-downloader/","../localhost/"];
+	</script>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="alex2844.github.io" />
+	<meta name="author" content="Alex Smith, https://me.qwedl.com/"/>
+	<title>Alex Smith</title>
+	<style>body,html.spinner body{visibility:hidden}html:after,.spinner:after{content:'';border-radius:50%;border:4px transparent solid;border-top-color:var(--theme,#3F51B5);animation:spinner 1s infinite;position:fixed}html:after{height:40px;width:40px;left:50%;top:50%;margin:-20px 0 0 -20px}@keyframes spinner{to{transform:rotate(360deg)}}</style>
+	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
+	<link href="https://alex2844.github.io/qad-cmf/dist/css/tablet_light.css" rel="stylesheet" />
+	<noscript><link rel="stylesheet" href="https://alex2844.github.io/qad-cmf/dist/css/tablet_light.css" /></noscript>
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+	<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+	<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" /></noscript>
+</head>
+<body>
+	<div class="content">
+		<header class="fixed scrolled color">
+			<h1>Alex Smith</h1>
+		</header>
+		<main class="_">
+			<section class="_cd3 _ct12 _cp12">
+				<div class="card color">
+					<div class="media avatar"></div>
+					<h2>Александр Юрьевич</h2>
+					<h3>Инженер-программист</h3>
+					<p>
+						<label><i class="material-icons">cake</i> 1992-05-12</label>
+						<label><i class="material-icons">public</i> <a href="https://www.qwedl.com/" target="_blank">Qwedl Inc</a></label>
+						<label><i class="material-icons">place</i> Челябинск, Россия</label>
+					</p>
+				</div>
+			</section>
+			<section class="_cd9 _ct12 _cp12">
+				<nav class="tabs color">
+					<a class="active" href="#tab_repo">Репозитории</a>
+					<!-- a href="#tab_form">Заказать проект</a -->
+				</nav>
+				<br />
+				<section class="tabs">
+					<article id="tab_form"></article>
+					<article id="tab_repo">
+						<article id="local" hidden>
+							<h2>Локальные проекты</h2>
+						</article>
+						<article id="github">
+							<h2>Последняя активность</h2>
+						</article>
+					</article>
+				</section>
+			</section>
+		</main>
+	</div>
+    <template id="story-item">
+		<div class="card _c">
+			<h2></h2>
+			<h3><span></span><small></small></h3>
+			<p hidden></p>
+			<div class="actions">
+				<a href="" class="link-home" target="_blank" hidden><button>Home</button></a>
+				<a href="" class="link-page" target="_blank" hidden><button>Page</button></a>
+				<a href="" class="link-github" target="_blank" hidden><button>Github</button></a>
+			</div>
+		</div>
+    </template>
+<style>
+.color:not(header) {
+    --color-rgb: var(--bcolor-rgb, 255, 255, 255);
+    --color: var(--bcolor, #fff);
+    --background: var(--theme, #202124);
+    --aside: var(--background);
+}
+nav.color.tabs a {
+	align-items: center;
+	background: var(--background);
+	color: #fff;
+}
+label {
+	display: flex;
+    align-items: center;
+}
+label i {
+	margin: 2px 5px 2px 0;
+}
+label a {
+	color: inherit;
+}
+h3 span {
+	flex-basis: 65%;
+}
+h3 small {
+	flex-basis: 35%;
+	text-align: right;
+	flex-basis: 65%;
+}
+.media.avatar {
+	background-image: url(https://avatars3.githubusercontent.com/u/18526177?v=4);
+}
+@media (max-width:839px) {
+	.media.avatar {
+		padding-bottom: 60vh;
+		background-position-y: 20%;
+		/*
+		padding-bottom: 60vh;
+		background-size: contain;
+		*/
+	}
+}
+</style>
+<script>
+(async () => {
+	let format = data => {
+		let e = (Date.now()-data)/1000;
+		return ((e < 10) ? 'now' : (
+			(e < 60)
+			? Math.floor(e)+' sec'
+			: (
+				(e < (60 * 60))
+				? Math.floor(e/60)+' min'
+				: (
+					(e < (60 * 60 * 24))
+					? Math.floor(e / (60 * 60))+' h'
+					: (
+						(e < (60 * 60 * 24 * 30))
+						? Math.floor(e / (60 * 60 * 24))+' d'
+						: data.toLocaleString([], {
+							dateStyle: 'short',
+							timeStyle: 'short'
+						})
+					)
+				)
+			)
+		));
+	};
+	if ((!location.hostname || (location.hostname == 'localhost')) && (typeof(local_projects) == 'object')) {
+		let local = document.querySelector('#local'),
+			reposLocal = document.createElement('div');
+		local.hidden = false;
+		reposLocal.classList.add('_');
+		local_projects.filter(repo => (repo != '../localhost/')).forEach(repo => {
+			let item = document.importNode(document.querySelector('template#story-item').content, true);
+			item.querySelector('h2').textContent = repo.replace(/\./g, '').replace(/\//g, '');
+			if (repo.startsWith('../'))
+				item.querySelector('.actions').remove();
+			else
+				item.querySelector('.link-page').hidden = !(item.querySelector('.link-page').href = repo);
+			reposLocal.append(item);
+		});
+		local.append(reposLocal);
+	}
+	let repos = await (await fetch('https://api.github.com/users/alex2844/repos')).json(),
+		reposGithub = document.createElement('div');
+	reposGithub.classList.add('_');
+	repos.filter(repo => (!repo.archived && !repo.disabled && (repo.name != 'alex2844.github.io') && (repo.pushed_at > repo.created_at))).sort((a, b) => {
+		return (new Date(b.pushed_at)).getTime() - (new Date(a.pushed_at)).getTime();
+	}).slice(0, 12).forEach(repo => {
+		let item = document.importNode(document.querySelector('template#story-item').content, true);
+		item.querySelector('h2').textContent = repo.name;
+		item.querySelector('h3 span').textContent = 'Update: '+format(new Date(item.querySelector('h3 span').title = repo.pushed_at));
+		item.querySelector('h3 small').textContent = repo.language;
+		if (repo.description)
+			item.querySelector('p').hidden = !(item.querySelector('p').textContent = repo.description);
+		if (repo.homepage && (repo.homepage.indexOf('alex2844.github.io/'+repo.name+'/') == -1))
+			item.querySelector('.link-home').hidden = !(item.querySelector('.link-home').href = repo.homepage);
+		if (repo.has_pages)
+			item.querySelector('.link-page').hidden = !(item.querySelector('.link-page').href = 'https://alex2844.github.io/'+repo.name+'/');
+		item.querySelector('.link-github').hidden = !(item.querySelector('.link-github').href = 'https://github.com/alex2844/'+repo.name);
+		reposGithub.append(item);
+	});
+	document.querySelector('#github').append(reposGithub);
+})();
+</script>
+<script>
+setTimeout(function() {
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TWRZDJG');
+}, ((navigator.userAgent.indexOf('/bots') > -1) ? 0 : 1500)); // YandexMetrika
+</script>
+</body>
+</html>
