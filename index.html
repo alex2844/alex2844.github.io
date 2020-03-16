@@ -154,7 +154,7 @@ h3 small {
 		});
 		local.append(reposLocal);
 	}
-	let repos = await (await fetch('https://api.github.com/users/alex2844/repos')).json(),
+	let repos = await (await fetch(((navigator.userAgent.indexOf('/bot') > -1) ? 'https://proxy.fetchcors.workers.dev/' : '')+'https://api.github.com/users/alex2844/repos')).json(),
 		reposGithub = document.createElement('div');
 	reposGithub.classList.add('_');
 	repos.filter(repo => (!repo.archived && !repo.disabled && (repo.name != 'alex2844.github.io') && (repo.pushed_at > repo.created_at))).sort((a, b) => {
