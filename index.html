@@ -166,11 +166,21 @@ h3 small {
 		item.querySelector('h3 small').textContent = repo.language;
 		if (repo.description)
 			item.querySelector('p').hidden = !(item.querySelector('p').textContent = repo.description);
-		if (repo.homepage && (repo.homepage.indexOf('alex2844.github.io/'+repo.name+'/') == -1))
-			item.querySelector('.link-home').hidden = !(item.querySelector('.link-home').href = repo.homepage);
-		if (repo.has_pages)
-			item.querySelector('.link-page').hidden = !(item.querySelector('.link-page').href = 'https://alex2844.github.io/'+repo.name+'/');
-		item.querySelector('.link-github').hidden = !(item.querySelector('.link-github').href = 'https://github.com/alex2844/'+repo.name);
+		if (repo.homepage && (repo.homepage.indexOf('alex2844.github.io/'+repo.name+'/') == -1)) {
+			let link_home = item.querySelector('.link-home');
+			link_home.href = repo.homepage;
+			link_home.hidden = false;
+		}
+		if (repo.has_pages) {
+			let link_page = item.querySelector('.link-page');
+			link_page.title = repo.name;
+			link_page.href = 'https://alex2844.github.io/'+repo.name+'/';
+			link_page.hidden = false;
+		}
+		let link_github = item.querySelector('.link-github');
+		link_github.title = repo.name;
+		link_github.href = 'https://github.com/alex2844/'+repo.name;
+		link_github.hidden = false;
 		reposGithub.append(item);
 	});
 	document.querySelector('#github').append(reposGithub);
