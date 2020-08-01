@@ -62,7 +62,7 @@ function buildSitemap(rootURL = "") {
 	let siteMap = createSitemap({ hostname: rootURL });
 	crawledPages.forEach(pg => {
 		try {
-			siteMap.add({ url: pg.url, title: pg.title })  
+			siteMap.add({ url: pg.url, title: pg.title });
 		} catch (err) {}
 	});
 	try {
@@ -70,8 +70,8 @@ function buildSitemap(rootURL = "") {
 			if (err)
 				throw err;
 		});
-	} catch (err) {      
-		throw err;      
+	} catch (err) {
+		throw err;
 	}
 }
 (async () => {
