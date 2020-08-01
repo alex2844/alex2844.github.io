@@ -1,0 +1,28 @@
+name: Sitemap
+on:
+  push:
+    branches: '*'
+  schedule:
+    - cron: '0 0 1 * *'
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Cron
+        run: |
+          npm install
+          npm run cron
+      - name: Commit files
+        run: |
+          git config --local user.email "noreply@github.com"
+          git config --local user.name "github-actions[bot]"
+          git add sitemap.xml
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -am "Update sitemap"
+          fi
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

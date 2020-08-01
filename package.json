@@ -1,0 +1,9 @@
+{
+	"scripts": {
+		"cron": "node crawlsite.js"
+	},
+	"dependencies": {
+		"puppeteer": "^1.11.0",
+		"sitemap": "^4.1.1"
+	}
+}
