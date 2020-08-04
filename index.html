@@ -158,7 +158,7 @@ h3 small {
 	let repos = await (await fetch(((navigator.userAgent.indexOf('/bot') > -1) ? 'https://proxy.fetchcors.workers.dev/' : '')+'https://api.github.com/users/alex2844/repos')).json(),
 		reposGithub = document.createElement('div');
 	reposGithub.classList.add('_');
-	repos.filter(repo => (!repo.archived && !repo.disabled && (repo.name != 'alex2844.github.io') && /*TMP*/(repo.name != 'youtube-music') && /*TMP*/(repo.pushed_at > repo.created_at))).sort((a, b) => {
+	repos.filter(repo => (!repo.archived && !repo.disabled && (repo.name != 'alex2844.github.io') && /*TMP*/!repo.name.startsWith('youtube') && !repo.name.startsWith('google') && /*TMP*/(repo.pushed_at > repo.created_at))).sort((a, b) => {
 		return (new Date(b.pushed_at)).getTime() - (new Date(a.pushed_at)).getTime();
 	}).slice(0, 12).forEach(repo => {
 		let item = document.importNode(document.querySelector('template#story-item').content, true);
