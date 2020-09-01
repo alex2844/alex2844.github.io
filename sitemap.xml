@@ -4,6 +4,9 @@
     <loc>https://alex2844.github.io/</loc>
   </url>
   <url>
+    <loc>https://alex2844.github.io/icons-generator/</loc>
+  </url>
+  <url>
     <loc>https://alex2844.github.io/qad-cmf/</loc>
   </url>
   <url>
@@ -17,6 +20,9 @@
   </url>
   <url>
     <loc>https://alex2844.github.io/qad-cmf/?t4</loc>
+  </url>
+  <url>
+    <loc>https://alex2844.github.io/js-spatial-navigation/</loc>
   </url>
   <url>
     <loc>https://alex2844.github.io/js-global-storage/</loc>
@@ -124,13 +130,7 @@
     <loc>https://alex2844.github.io/shaka-player/?type=cache</loc>
   </url>
   <url>
-    <loc>https://alex2844.github.io/icons-generator/</loc>
-  </url>
-  <url>
     <loc>https://alex2844.github.io/js-global-fetch/</loc>
-  </url>
-  <url>
-    <loc>https://alex2844.github.io/js-spatial-navigation/</loc>
   </url>
   <url>
     <loc>https://alex2844.github.io/node-peerjs/</loc>
