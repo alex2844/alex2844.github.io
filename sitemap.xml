@@ -4,25 +4,16 @@
     <loc>https://alex2844.github.io/</loc>
   </url>
   <url>
-    <loc>https://alex2844.github.io/icons-generator/</loc>
+    <loc>https://alex2844.github.io/shaka-player/</loc>
   </url>
   <url>
-    <loc>https://alex2844.github.io/qad-cmf/</loc>
+    <loc>https://alex2844.github.io/shaka-player/index.html</loc>
   </url>
   <url>
-    <loc>https://alex2844.github.io/qad-cmf/?t1</loc>
+    <loc>https://alex2844.github.io/shaka-player/index.html?type=cache</loc>
   </url>
   <url>
-    <loc>https://alex2844.github.io/qad-cmf/?t2</loc>
-  </url>
-  <url>
-    <loc>https://alex2844.github.io/qad-cmf/?t3</loc>
-  </url>
-  <url>
-    <loc>https://alex2844.github.io/qad-cmf/?t4</loc>
-  </url>
-  <url>
-    <loc>https://alex2844.github.io/js-spatial-navigation/</loc>
+    <loc>https://alex2844.github.io/shaka-player/?type=cache</loc>
   </url>
   <url>
     <loc>https://alex2844.github.io/js-global-storage/</loc>
@@ -118,16 +109,25 @@
     <loc>https://alex2844.github.io/js-global-storage/?keyword-gmail-and-google-calendar-get-a-whole-lot-better-on-ios</loc>
   </url>
   <url>
-    <loc>https://alex2844.github.io/shaka-player/</loc>
+    <loc>https://alex2844.github.io/icons-generator/</loc>
   </url>
   <url>
-    <loc>https://alex2844.github.io/shaka-player/index.html</loc>
+    <loc>https://alex2844.github.io/qad-cmf/</loc>
   </url>
   <url>
-    <loc>https://alex2844.github.io/shaka-player/index.html?type=cache</loc>
+    <loc>https://alex2844.github.io/qad-cmf/?t1</loc>
   </url>
   <url>
-    <loc>https://alex2844.github.io/shaka-player/?type=cache</loc>
+    <loc>https://alex2844.github.io/qad-cmf/?t2</loc>
+  </url>
+  <url>
+    <loc>https://alex2844.github.io/qad-cmf/?t3</loc>
+  </url>
+  <url>
+    <loc>https://alex2844.github.io/qad-cmf/?t4</loc>
+  </url>
+  <url>
+    <loc>https://alex2844.github.io/js-spatial-navigation/</loc>
   </url>
   <url>
     <loc>https://alex2844.github.io/js-global-fetch/</loc>
