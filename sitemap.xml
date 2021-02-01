@@ -7,6 +7,9 @@
     <loc>https://alex2844.github.io/icons-generator/</loc>
   </url>
   <url>
+    <loc>https://alex2844.github.io/js-global-fetch/</loc>
+  </url>
+  <url>
     <loc>https://alex2844.github.io/js-global-storage/</loc>
   </url>
   <url>
@@ -211,39 +214,6 @@
     <loc>https://alex2844.github.io/js-global-storage/?android-emoji-day-new-android-emoji</loc>
   </url>
   <url>
-    <loc>https://alex2844.github.io/js-global-fetch/</loc>
-  </url>
-  <url>
     <loc>https://alex2844.github.io/js-global-xml/</loc>
-  </url>
-  <url>
-    <loc>https://alex2844.github.io/shaka-player/</loc>
-  </url>
-  <url>
-    <loc>https://alex2844.github.io/shaka-player/index.html</loc>
-  </url>
-  <url>
-    <loc>https://alex2844.github.io/shaka-player/index.html?type=cache</loc>
-  </url>
-  <url>
-    <loc>https://alex2844.github.io/shaka-player/?type=cache</loc>
-  </url>
-  <url>
-    <loc>https://alex2844.github.io/qad-cmf/</loc>
-  </url>
-  <url>
-    <loc>https://alex2844.github.io/qad-cmf/?t1</loc>
-  </url>
-  <url>
-    <loc>https://alex2844.github.io/qad-cmf/?t2</loc>
-  </url>
-  <url>
-    <loc>https://alex2844.github.io/qad-cmf/?t3</loc>
-  </url>
-  <url>
-    <loc>https://alex2844.github.io/qad-cmf/?t4</loc>
-  </url>
-  <url>
-    <loc>https://alex2844.github.io/js-spatial-navigation/</loc>
   </url>
 </urlset>
